@@ -1,0 +1,34 @@
+﻿<Window x:Class="Practic3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practic3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="306" Width="375" ResizeMode="CanMinimize">
+    <Grid>
+
+        <TextBox x:Name="numberOfRows" HorizontalAlignment="Left" Margin="228,43,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="18"  ></TextBox>
+        <TextBox x:Name="numberOfColumns" HorizontalAlignment="Left" Margin="228,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="18"  />
+        <TextBox x:Name="numberOfCorrectColumn" HorizontalAlignment="Left" Margin="228,241,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" IsReadOnly="True" Height="18"></TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="228,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"><Run Text="Введите число "/><Run Language="ru-ru" Text="строк"/><Run Text=":"/></TextBlock>
+        <TextBlock Margin="228,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122"><Run Text="Последний столбец с"/><Run Language="ru-ru" Text=" наибольшим"/><Run Text=" кол-вом ра"/><Run Text="вн"/><Run Text="ых элементов"/><Run Text=":"/></TextBlock>
+
+        <Button x:Name="startProgramm" Content="Заполнить" HorizontalAlignment="Left" Margin="228,161,0,0" VerticalAlignment="Top" Width="122" Click="startProgramm_Click"/>
+
+        <Menu VerticalAlignment="Top" Height="18">
+            <MenuItem Header="Файл" Width="44">
+                <MenuItem x:Name="openArray" Header="Открыть массив и рассчитать" Click="openArray_Click"></MenuItem>
+                <MenuItem x:Name="saveArray" Header="Сохранить массив" Click="saveArray_Click"></MenuItem>
+                <MenuItem x:Name="clear" Header="Очистить массив" Click="clear_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem HorizontalAlignment="Center" Height="18" Width="73" Header="Программа">
+                <MenuItem x:Name="help" Header="О программе" Click="help_Click"></MenuItem>
+                <MenuItem x:Name="exit" Header="Выход" Click="exit_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="dataGrid" Margin="10,22,0,0" HorizontalAlignment="Left" Width="210" Height="204" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="228,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"><Run Text="Введите число "/><Run Language="ru-ru" Text="столбцов"/><Run Text=":"/></TextBlock>
+        <Button x:Name="createArray" Content="Создать массив" HorizontalAlignment="Left" Margin="228,130,0,0" VerticalAlignment="Top" Width="122" Click="createArray_Click"/>
+    </Grid>
+</Window>
