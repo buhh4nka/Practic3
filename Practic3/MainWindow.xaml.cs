@@ -29,15 +29,15 @@ namespace Practic3
         }
         private void createArray_Click(object sender, RoutedEventArgs e)
         {
-            bool isNotErrorInColumns = Int32.TryParse(numberOfColumns.Text, out int columns);
-            bool isNotErrorInRows = Int32.TryParse(numberOfRows.Text, out int rows);
-            if (isNotErrorInColumns &&  isNotErrorInRows)
+            try
             {
-            _matrix = new int[columns, rows];
+                int columns = Convert.ToInt32(numberOfColumns.Text);
+                int rows = Convert.ToInt32(numberOfRows.Text);
+                _matrix = new int[columns, rows];
 
-              dataGrid.ItemsSource = ArrayOperation.ToDataTable(_matrix).DefaultView;
+                dataGrid.ItemsSource = ArrayOperation.ToDataTable(_matrix).DefaultView;
             }
-            else
+            catch
             {
                 MessageBox.Show("Число столбцов или строк введено неверно. \nВведите другое значение.", "Ошибка");
                 numberOfColumns.Clear();
@@ -47,7 +47,7 @@ namespace Practic3
 
         private void startProgramm_Click(object sender, RoutedEventArgs e)
         {
-            if (_matrix != null)
+            try
             {
 
                 _matrix.FillArray(-10, 10);
@@ -56,7 +56,7 @@ namespace Practic3
                 numberOfCorrectColumn.Text = Practice.LastEqualColumn(_matrix).ToString();
 
             }
-            else
+            catch 
             {
                 MessageBox.Show("Матрица не заполнена. Заполните матрицу.", "Ошибка");
             }
